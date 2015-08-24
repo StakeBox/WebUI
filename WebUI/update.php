@@ -31,8 +31,7 @@ if ($status == "webui"){
 if ($status == "wallet"){ 
     chdir($walletDir);
     exec("git pull"); 
-    echo getcwd() . "<br>"; 
-    //print '<h2>$currentWallet ...</h2>';  
+    print '<h2>You have updated the current wallet. Reboot now in order to use the new version.</h2>'; 
 } 
 ?>
 </div>

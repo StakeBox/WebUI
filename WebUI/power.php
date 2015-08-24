@@ -24,11 +24,11 @@ include ("pass.php");
 $status = $_POST["status"];  
   
 if ($status == "reboot"){  
-    exec("python /var/www/html/libs/reboot.py");  
+    exec("python /var/www/html/webui/WebUIlibs/reboot.py");  
     print '<h2>Your StakeBox is rebooting ...</h2>';  
 }  
 if ($status == "shutdown"){  
-    exec("python /var/www/html/libs/shutdown.py");  
+    exec("python /var/www/html/webui/WebUI/libs/shutdown.py");  
     print '<h2>Your StakeBox is shutting down ...</h2>';  
 } 
 ?>
