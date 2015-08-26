@@ -65,6 +65,15 @@
 		"ticker" => "crave"
 	);
 
+	$wallets['DarkTron'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 31452,
+		"protocol" => "http",
+		"ticker" => "drkt"
+	);
+
 	$wallets['Diamond'] = array(
 		"user" => "user",  
 		"pass" => "stakebox",      
@@ -90,6 +99,15 @@
 		"port" => 7474,
 		"protocol" => "http",
 		"ticker" => "flt"
+	);
+
+	$wallets['GoldPieces'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 23461,
+		"protocol" => "http",
+		"ticker" => "gp"
 	);
 
 	$wallets['HoboNickels'] = array(
