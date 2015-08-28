@@ -125,7 +125,7 @@
 		"host" => "localhost",     
 		"port" => 27554,
 		"protocol" => "http",
-		"ticker" => "hyp"
+		"ticker" => "hyper"
 	);
 
 	$wallets['HyperStake'] = array(
