@@ -26,16 +26,16 @@
 
 	$ticker = $coinu['ticker'];
 
-	$pair = "$ticker"."_btc";
+	$pair = "$ticker"."-btc";
 
 	// fetch price in BTC price of current coin
 	$curl = curl_init();
-	curl_setopt($curl, CURLOPT_URL, "http://api.cryptocoincharts.info/tradingPair/".$pair);
+	curl_setopt($curl, CURLOPT_URL, "https://www.cryptonator.com/api/full/".$pair);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	$rawData = curl_exec($curl);
 	curl_close($curl);
 	$data = json_decode($rawData);
-	$price = "$data->price";
+	$price = $data->ticker->markets[0]->price;
 
 	// fetch fiat value of BTC
 	$curl = curl_init();
@@ -44,7 +44,7 @@
 	$rawData1 = curl_exec($curl);
 	curl_close($curl);
 	$data1 = json_decode($rawData1);
-	$fiatBTC = "$data1->price";
+	$fiatBTC = $data1->price;
 ?>
 
 <html><head><title>StakeBox</title>
@@ -82,7 +82,7 @@
 					<li><a href="control">Control</a></li>
 				</ul>
 				<div class="navbar-right">
-					<p class="navbar-text"><?php 	echo "Current best price is {$price} BTC on ".$data->best_market.""; ?></p>
+					<p class="navbar-text"><?php 	echo "Current price is {$price} BTC on {$data->ticker->markets[0]->market}"; ?></p>
 					<p class="navbar-text">Select Wallet:</p>
 					<ul class="nav navbar-nav">
 						<li class="dropdown">

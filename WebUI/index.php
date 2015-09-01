@@ -7,7 +7,9 @@ $info); $bal1 = $coin->getbalance("*", 6);
 $bal2 = $coin->getbalance("*", 0); 
 $bal3 = abs(
 $bal1 - $bal2); 
-$bal4 = abs("{$y['stake']}"); 
+$bal4 = abs("{$y['stake']}");
+$address = $coin->listaddressgroupings();
+$addressArray = $address[0][0][0]; 
 if ($currentWallet == ArchCoin || $currentWallet == BlackCoin || $currentWallet == Clams || $currentWallet == Crave || $currentWallet == FlutterCoin || $currentWallet == GoldPieces || $currentWallet == Navajo || $currentWallet == NetCoin || $currentWallet == PayCon || $currentWallet == RATECoin || $currentWallet == ShadowCash){
 	$stakinginfo = $coin->getstakinginfo(); 
 	$x = array_reverse($stakinginfo); 
@@ -74,7 +76,7 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 </div>
 </div>
 <div class="well">
-	<p>Your main wallet address is <?php print_r($coin->getaccountaddress("")); ?>.
+	<p>Your main wallet address is <?php print_r($addressArray); ?>.
 	<p>The network is currently on block <?php print_r($coin->getblockcount()); ?>.
 	<?php if ($currentWallet == ArchCoin || $currentWallet == BitBean || $currentWallet == BlackCoin || $currentWallet == BottleCaps || $currentWallet == Clams || $currentWallet == DarkTron || $currentWallet == Equilibrium || $currentWallet == FlutterCoin || $currentWallet == GoldPieces || $currentWallet == HoboNickels || $currentWallet == Navajo || $currentWallet == NetCoin || $currentWallet == PayCon || $currentWallet == PayCoin || $currentWallet == RATECoin || $currentWallet == ShadowCash || $currentWallet == VeriCoin): ?>
 		<?php echo "<p>Your stake weight is {$w['combined']}{$sw['combined']}{$x['weight']}{$x['Weight']}.</p>" ?>
