@@ -76,7 +76,6 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 </div>
 </div>
 <div class="well">
-     <?php echo "test"; ?>
      <?php if($addressArray == ""): ?>
 	<p> Your main wallet address is <?php print_r($coin->getaccountaddress("")); ?>.
      <?php else: ?>
