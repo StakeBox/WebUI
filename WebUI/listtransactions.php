@@ -1,7 +1,7 @@
 <?php
 include("header.php");
 include("pass.php");
-$trans = $coin->listtransactions('*', 9999999);
+$trans = $coin->listtransactions();
 $x = array_reverse($trans);
 ?>
 
