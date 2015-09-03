@@ -53,7 +53,7 @@ include ("pass.php");
                      <span class="input-group-btn">
 	                <button class='btn btn-default' type="submit" value="getaddressesbyaccount">Get Addresses By Account</button>
 	             </span>
-	                <input class="form-control" type="text" name="account" placeholder="Account" >
+	                <input class="form-control" type="text" name="account" placeholder="Leave blank for default account" >
                   </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-5 -->
