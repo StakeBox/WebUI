@@ -32,9 +32,9 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 	$days = floor($time / 86400); 
 	$hours = floor(($time / 3600) % 24); 
 	$minutes = floor(($time / 60) % 60); 
-	$fiatValue = ($bal2 * $price * $fiatBTC); 
+	$fiatValue = ($bal1 * $price * $fiatBTC); 
 	$fiatValue = sprintf("%01.2f", $fiatValue); 
-	$btcValue = ($bal2 * $price); 
+	$btcValue = ($bal1 * $price); 
 	$btcValue = sprintf("%01.8f", $btcValue); 
 	$address = $coin->getaccountaddress(""); 
 	$img = shell_exec("qrencode --output=- -l H -d 144 -s 50 -m 1 $address"); $imgData = "data:image/png;base64," . base64_encode($img); 
