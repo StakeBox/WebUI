@@ -2,11 +2,10 @@
 include ("header.php"); 
 include ("pass.php"); 
 $info = $coin->getinfo(); 
-$y = array_reverse(
-$info); $bal1 = $coin->getbalance("*", 6); 
+$y = array_reverse($info);
+$bal1 = $coin->getbalance(); 
 $bal2 = $coin->getbalance("*", 0); 
-$bal3 = abs(
-$bal1 - $bal2); 
+$bal3 = abs($bal1 - $bal2); 
 $bal4 = abs("{$y['stake']}");
 $address = $coin->listaddressgroupings();
 $addressArray = $address[0][0][0]; 
@@ -43,7 +42,7 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 <div class="row">
 	<div class="col-lg-6">
 		<h3>Available Balance: <font color='green'><?php echo $bal1; ?></font> <?php echo $currentWallet; ?></h3>
-		<h4>Unconfirmed Balance: <font color='red'><?php echo $bal3; ?></font> <?php echo $currentWallet; ?></h4>
+		
 		<h4>Unavailable Due To Staking: <font color='red'><?php echo $bal4; ?></font> <?php echo $currentWallet; ?></h4>
 		<h4>BTC Value: <font color='green'><?php echo "{$btcValue}"; ?></font></h4>
 		<h4><?php echo $longCurrency; ?> Value: <font color='green'><?php echo "{$symbol}{$fiatValue}"; ?></font></h4>
@@ -79,7 +78,7 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
      <?php if($addressArray == ""): ?>
 	<p> Your main wallet address is <?php print_r($coin->getaccountaddress("")); ?>.
      <?php else: ?>
-	<p>Your main wallet address is <?php print_r($addressArray); ?>.
+	<p>Your main wallet address is <?php print_r($getaddressesbyacount()[0]); ?>.
      <?php endif; ?>
 	<p>The network is currently on block <?php print_r($coin->getblockcount()); ?>.
 	<?php if ($currentWallet == ArchCoin || $currentWallet == BitBean || $currentWallet == BlackCoin || $currentWallet == BottleCaps || $currentWallet == Clams || $currentWallet == DarkTron || $currentWallet == Equilibrium || $currentWallet == FlutterCoin || $currentWallet == GoldPieces || $currentWallet == HoboNickels || $currentWallet == Navajo || $currentWallet == NetCoin || $currentWallet == PayCon || $currentWallet == PayCoin || $currentWallet == RATECoin || $currentWallet == ShadowCash || $currentWallet == VeriCoin): ?>
