@@ -75,7 +75,7 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 </div>
 </div>
 <div class="well">
-     
+     <p> this is a test </p>
     <?php if($primary!=""): ?>
 	<p> Your main wallet address is <?php print_r($primary); ?>.
     <?php else: ?>
