@@ -7,6 +7,7 @@
 	require("jsonRPCClient.php");
 	include("printarray.php");
 	include("currency.php");
+	include("primaryaddress.php");
 
 	session_start();
 	if (isset($_GET['currentWallet']) && !empty($_GET['currentWallet']))

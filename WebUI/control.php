@@ -38,12 +38,12 @@ include ("pass.php");
                </form>
             </div><!-- /.col-lg-2 -->
             <div class="col-lg-5">
-               <form action="getaccountaddress" method="POST"><input type="hidden">
+               <form action="setprimary" method="POST"><input type="hidden">
                   <div class="input-group">
                      <span class="input-group-btn">
-	                <button class='btn btn-default' type="submit" value="getaccountaddress">Get Account Address</button>
+	                <button class='btn btn-default' type="submit" value="setprimary">Set Main Address</button>
                      </span>
-                        <input class="form-control" type="text" name="account" placeholder="Account" >
+                        <input class="form-control" type="text" name="address" placeholder="Address" >
                   </div><!-- /input-group -->
                </form>
             </div><!-- /.col-lg-5 -->
