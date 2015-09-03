@@ -20,7 +20,7 @@ include ("pass.php");
             <a href="update" class='btn btn-default' role='button'>Update</a>
             <a href="getblockcount" class='btn btn-default' role='button'>Get Block #</a>
             <a href="allcommands" class='btn btn-default' role='button'>All Commands</a>
-            <a href="setpass" class='btn btn-default' role='button'>Change Password</a>
+            <a href="setpass" class='btn btn-default' role='button'>Change UI Password</a>
             <a href="changecurrency" class='btn btn-default' role='button'>Change Currency</a>
          </div><!-- /.row -->
       </div><!-- /.padding -->
@@ -259,7 +259,7 @@ include ("pass.php");
                <form action="walletpassphrasechange" method="POST"><input type="hidden">
                   <div class="input-group">
                      <span class="input-group-btn">
-	                <button class='btn btn-default' type="submit" value="walletpassphrasechange">Change Password</button>
+	                <button class='btn btn-default' type="submit" value="walletpassphrasechange">Change Wallet Password</button>
 	             </span>
 	                <input class="form-control" type="password" name="old" placeholder="Old Password">
                   </div><!-- /input-group -->

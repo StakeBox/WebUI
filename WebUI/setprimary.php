@@ -1,13 +1,17 @@
 <?php 
 include ("header.php");
 include ("pass.php");
-$primaryLocation = "primaryaddress.php";
+$primaryLocation = "libs/primary".$currentWallet."address.php";
 
 function changePrimary(){
 
 	global $primaryLocation;
 	global $newPrimary;
-
+	if(!file_exists("$primaryLocation")){
+		$file = fopen("$primaryLocation","w");
+		fwrite($file,"");
+		fclose($file);
+	}   
 	if (is_readable($primaryLocation) == FALSE) 
 		die ("The primary address file must be writable.") ; 
 

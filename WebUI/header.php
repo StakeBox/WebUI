@@ -7,7 +7,7 @@
 	require("jsonRPCClient.php");
 	include("printarray.php");
 	include("currency.php");
-	include("primaryaddress.php");
+	
 
 	session_start();
 	if (isset($_GET['currentWallet']) && !empty($_GET['currentWallet']))
@@ -46,6 +46,8 @@
 	curl_close($curl);
 	$data1 = json_decode($rawData1);
 	$fiatBTC = $data1->price;
+
+	include("libs/primary".$currentWallet."address.php");
 ?>
 
 <html><head><title>StakeBox</title>
