@@ -7,8 +7,12 @@ $bal1 = $coin->getbalance();
 $bal2 = $coin->getbalance("*", 0); 
 $bal3 = abs($bal1 - $bal2); 
 $bal4 = abs("{$y['stake']}");
-$address = $coin->listaddressgroupings();
-$addressArray = $address[0][0][0]; 
+if($primary!=""){
+	$address = ($primary);
+	else{
+        	$address = ($coin->getaddressesbyaccount("")[0]);
+	}
+}  
 if ($currentWallet == ArchCoin || $currentWallet == BlackCoin || $currentWallet == Clams || $currentWallet == Crave || $currentWallet == FlutterCoin || $currentWallet == GoldPieces || $currentWallet == Navajo || $currentWallet == NetCoin || $currentWallet == PayCon || $currentWallet == RATECoin || $currentWallet == ShadowCash){
 	$stakinginfo = $coin->getstakinginfo(); 
 	$x = array_reverse($stakinginfo); 
@@ -36,7 +40,6 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 	$fiatValue = sprintf("%01.2f", $fiatValue); 
 	$btcValue = ($bal1 * $price); 
 	$btcValue = sprintf("%01.8f", $btcValue); 
-	$address = $coin->getaccountaddress(""); 
 	$img = shell_exec("qrencode --output=- -l H -d 144 -s 50 -m 1 $address"); $imgData = "data:image/png;base64," . base64_encode($img); 
 ?>
 <div class="row">
@@ -76,11 +79,7 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 </div>
 <div class="well">
      
-    <?php if($primary!=""): ?>
-	<p> Your main wallet address is <?php print_r($primary); ?>.
-    <?php else: ?>
-        <p> Your main wallet address is <?php print_r($coin->getaddressesbyaccount("")[0]); ?>.
-    <?php endif; ?>     
+	<p> Your main wallet address is <?php print_r($address); ?>.    
 	<p>The network is currently on block <?php print_r($coin->getblockcount()); ?>.
 	<?php if ($currentWallet == ArchCoin || $currentWallet == BitBean || $currentWallet == BlackCoin || $currentWallet == BottleCaps || $currentWallet == Clams || $currentWallet == DarkTron || $currentWallet == Equilibrium || $currentWallet == FlutterCoin || $currentWallet == GoldPieces || $currentWallet == HoboNickels || $currentWallet == Navajo || $currentWallet == NetCoin || $currentWallet == PayCon || $currentWallet == PayCoin || $currentWallet == RATECoin || $currentWallet == ShadowCash || $currentWallet == VeriCoin): ?>
 		<?php echo "<p>Your stake weight is {$w['combined']}{$sw['combined']}{$x['weight']}{$x['Weight']}.</p>" ?>
