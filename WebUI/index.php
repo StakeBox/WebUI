@@ -41,7 +41,7 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 	$fiatValue = sprintf("%01.2f", $fiatValue); 
 	$btcValue = ($bal1 * $price); 
 	$btcValue = sprintf("%01.8f", $btcValue); 
-	$img = exec("qrencode --output=- -l H -d 144 -s 50 -m 1 $address"); $imgData = "data:image/png;base64," . base64_encode($img); 
+	$img = shell_exec("qrencode --output=- -l H -d 144 -s 50 -m 1 $address"); $imgData = "data:image/png;base64," . base64_encode($img); 
 ?>
 <div class="row">
 	<div class="col-lg-6">
