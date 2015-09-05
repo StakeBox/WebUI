@@ -7,12 +7,7 @@ $bal1 = $coin->getbalance();
 $bal2 = $coin->getbalance("*", 0); 
 $bal3 = abs($bal1 - $bal2); 
 $bal4 = abs("{$y['stake']}");
-if($primary!=""){
-	$address = ($primary);
-	else{
-        	$address = ($coin->getaddressesbyaccount("")[0]);
-	}
-}  
+ 
 if ($currentWallet == ArchCoin || $currentWallet == BlackCoin || $currentWallet == Clams || $currentWallet == Crave || $currentWallet == FlutterCoin || $currentWallet == GoldPieces || $currentWallet == Navajo || $currentWallet == NetCoin || $currentWallet == PayCon || $currentWallet == RATECoin || $currentWallet == ShadowCash){
 	$stakinginfo = $coin->getstakinginfo(); 
 	$x = array_reverse($stakinginfo); 
