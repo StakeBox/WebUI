@@ -54,8 +54,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='css\slate.css' rel='stylesheet' >
 <link href="css\main.css" rel="stylesheet" >
-<script src='libs/jquery.js'></script>
-<script src='libs/bootstrap.js'></script>
+<script src='libs\jquery.js'></script>
+<script src='libs\bootstrap.js'></script>
 	<script>
 		$(function(){
 			$('#selectwallet a').click(function(){
