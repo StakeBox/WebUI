@@ -236,6 +236,16 @@
 		"ticker" => "sdc"
 	);
 
+
+	$wallets['Sprouts'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 9902,
+		"protocol" => "http",
+		"ticker" => "sprts"
+	);
+
 	$wallets['TekCoin'] = array(
 		"user" => "user",  
 		"pass" => "stakebox",      
