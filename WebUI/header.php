@@ -66,7 +66,6 @@
 	</script>
 </head>
 <body>
-    <div class=row>
 	<nav class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -103,7 +102,6 @@
 			</div>
 		</div>
 	</nav>
-    </div>
 <div class="container-fluid">
 <div class='content'>
 <div class="well">
