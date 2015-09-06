@@ -66,7 +66,7 @@
 	</script>
 </head>
 <body>
-    <div class="row">
+    
 	<nav class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -75,7 +75,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				</button>
+				</button><div class="row">
 				<a class="navbar-brand" href="./"><img src="logo.png" height="170%"></a>
 
 			</div>
