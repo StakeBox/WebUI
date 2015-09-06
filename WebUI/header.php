@@ -55,7 +55,7 @@
 <link href='css/slate.css' rel='stylesheet' >
 <link href="css/main.css" rel="stylesheet" >
 <script src='libs/jquery.js'></script>
-<script src='libs\bootstrap.js'></script>
+<script src='libs/bootstrap.js'></script>
 	<script>
 		$(function(){
 			$('#selectwallet a').click(function(){
@@ -66,6 +66,7 @@
 	</script>
 </head>
 <body>
+    <div class="row">
 	<nav class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
@@ -102,6 +103,7 @@
 			</div>
 		</div>
 	</nav>
+    </div>
 <div class="container-fluid">
 <div class='content'>
 <div class="well">
