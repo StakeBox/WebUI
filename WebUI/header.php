@@ -75,7 +75,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-				</button><div class="row">
+				</button>
 				<a class="navbar-brand" href="./"><img src="logo.png" height="170%"></a>
 
 			</div>
@@ -103,7 +103,6 @@
 			</div>
 		</div>
 	</nav>
-    </div>
 <div class="container-fluid">
 <div class='content'>
 <div class="well">
