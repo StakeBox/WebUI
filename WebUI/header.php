@@ -49,7 +49,7 @@
 
 	include("libs/primary".$currentWallet."address.php");
 ?>
-<!DOCTYPE html>
+
 <html><head><title>StakeBox</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='css/slate.css' rel='stylesheet' >
@@ -68,7 +68,7 @@
 <body>
     
 	<nav class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
