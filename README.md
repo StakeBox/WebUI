@@ -3,4 +3,4 @@ StakeBox is intended to serve as an energy efficient way to stake your
 proof of stake cryptocurrencies. More information is available at StakeBox.com, 
 or contact us as support@StakeBox.com.
 
-v1.0.4
+v1.0.5
