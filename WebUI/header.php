@@ -49,7 +49,7 @@
 
 	include("libs/primary".$currentWallet."address.php");
 ?>
-
+<!DOCTYPE html>
 <html><head><title>StakeBox</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='css/slate.css' rel='stylesheet' >
