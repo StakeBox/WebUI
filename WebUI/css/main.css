@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 /* title */
 .navbar-default .navbar-brand {
-    float: left;
     color: #337ab7;
 }
 .navbar-default .navbar-brand:hover,
@@ -22,8 +21,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #66CCFF;
 }
 .navbar-brand {
-    float: left;
-    padding: 0px 0px 21px 0px;
+    padding: 0px 0px 0px 0px;
 }
 .navbar-brand:hover {
     background-color: #272b2e;
