@@ -47,7 +47,7 @@
 	$data1 = json_decode($rawData1);
 	$fiatBTC = $data1->price;
 	
-	$lockState = "unlocked";
+	$lockState = "Unlocked";
 	include("libs/primary".$currentWallet."address.php");
 	include("libs/".$currentWallet."lockstate.php");
 ?>
