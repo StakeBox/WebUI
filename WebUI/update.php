@@ -25,21 +25,17 @@ $walletDir = "/home/stakebox/wallets/".$currentWallet
 $status = $_POST["status"];  
   
 if ($status == "webui"){
-  try{  
+ 
     exec("cd /var/www/html/webui && git pull"); 
     print '<h2>You have updated the UI</h2>';
-  }catch(exception $e){
-    echo "<p><b>Something went wrong contact <a"href="mailto:support@stakebox.net">support@stakebox.com</a></b></p>";
-  }  
+ 
 }  
 if ($status == "wallet"){ 
-  try{    
+   
     chdir($walletDir);
     exec("git pull"); 
     print '<h2>You have updated the current wallet. Reboot now in order to use the new version.</h2>';
-  }catch(exception $e){
-    echo "<p><b>Something went wrong contact <a"href="mailto:support@stakebox.net">support@stakebox.com</a></b></p>";
-  } 
+
 } 
 ?>
 </div>
