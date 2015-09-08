@@ -3,7 +3,7 @@
 
 	#ini_set("display_errors", false);
 
-	require("config.php");
+	require("libs/config.php");
 	require("jsonRPCClient.php");
 	include("printarray.php");
 	include("libs/currency.php");
