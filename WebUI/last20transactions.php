@@ -24,15 +24,26 @@ $x = array_reverse($trans);
             else {
                 $colorconfirms = "red";
             }
+	    if($x['category'] == generate && $currentWallet == HYPER){
+		$getTransaction = $coin->gettransaction($x['txid']);
+		$fee = array_reverse($getTransaction);
+		$amount = $fee['fee'];
+		$x['amount'] = $amount;
+		$y = array_reverse($fee['vout']);
+		$z = array_reverse($y[0]);
+		$q = array_reverse($z['scriptPubKey']);
+		$f = array_reverse($q['addresses']);
+		$address = array_reverse($z['0']);
+		$x['address'] = $f[0];
+	    }
             $date = date('D M j y g:i a', $x['time']);
-            echo "<tr>";
             echo "<tr>";
             echo "<td>" . ucfirst($x['category']) . "</td>";
     
             echo "<td>{$x['address']}</td>
                 <td><div style='width:60px;overflow:hidden'>{$x['account']}</div></td>
-                    <td><div style='width:70px;overflow:hidden'><font color='{$coloramount}'>{$x['amount']}</font></div></td>
-                <td><div style='width:110px;overflow:hidden'><font color='{$colorconfirms}'>{$x['confirmations']}</font></div></td>
+                <td><div style='width:70px;overflow:hidden'><font color='{$coloramount}'>{$x['amount']}</font></div></td>
+		<td><div style='width:110px;overflow:hidden'><font color='{$colorconfirms}'>{$x['confirmations']}</font></div></td>
                 <td>{$date}</td>
                 <td><div style='width:120px;overflow:hidden'>{$x['txid']}</div></td>
                 </tr>";

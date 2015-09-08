@@ -10,10 +10,15 @@ $bal4 = abs("{$y['stake']}");
 if($primary!=""){
 	$address = $primary;
 }
-	else{
-        	$address = $coin->getaddressesbyaccount("")[0];
+else{
+        $address = $coin->getaddressesbyaccount("")[0];
 	}
-
+if(lockState!=""){
+	$walletLockState = $lockState;
+}
+else{
+	$walletLockState = "Unlocked";
+}
 if ($currentWallet == ArchCoin || $currentWallet == BlackCoin || $currentWallet == Clams || $currentWallet == Crave || $currentWallet == FlutterCoin || $currentWallet == GoldPieces || $currentWallet == Navajo || $currentWallet == NetCoin || $currentWallet == PayCon || $currentWallet == RATECoin || $currentWallet == ShadowCash){
 	$stakinginfo = $coin->getstakinginfo(); 
 	$x = array_reverse($stakinginfo); 
@@ -49,7 +54,12 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 		
 		<h4>Unavailable Due To Staking: <font color='red'><?php echo $bal4; ?></font> <?php echo $currentWallet; ?></h4>
 		<h4>BTC Value: <font color='green'><?php echo "{$btcValue}"; ?></font></h4>
-		<h4><?php echo $longCurrency; ?> Value: <font color='green'><?php echo "{$symbol}{$fiatValue}"; ?></font></h4>
+		<h4><?php echo $longCurrency; ?> Value: <font color='green'><?php echo "{$symbol}{$fiatValue}"; ?></font></h4><br>
+		<div class="col-lg-8">
+                	<form action="lockcontrol">
+                   		<button class='btn btn-default btn-block ' type="submit">Your Wallet Is <?php print($walletLockState)?> Click To Change</button>
+                	</form>	
+		</div>
 	</div>
 	<div class="col-lg-3">
 		<?php if (isset($_POST['show'])){

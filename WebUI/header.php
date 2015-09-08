@@ -6,7 +6,7 @@
 	require("config.php");
 	require("jsonRPCClient.php");
 	include("printarray.php");
-	include("currency.php");
+	include("libs/currency.php");
 	
 
 	session_start();
@@ -48,6 +48,7 @@
 	$fiatBTC = $data1->price;
 
 	include("libs/primary".$currentWallet."address.php");
+	include("libs/".$currentWallet."lockstate.php");
 ?>
 
 <html><head><title>StakeBox</title>
