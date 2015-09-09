@@ -6,7 +6,7 @@
 	require("libs/config.php");
 	require("jsonRPCClient.php");
 	include("printarray.php");
-	include("libs/currency.php");
+
 	
 
 	session_start();
@@ -37,6 +37,8 @@
 	curl_close($curl);
 	$data = json_decode($rawData);
 	$price = $data->ticker->markets[0]->price;
+
+	include("libs/currency.php");
 
 	// fetch fiat value of BTC
 	$curl = curl_init();
