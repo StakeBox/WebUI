@@ -1,7 +1,7 @@
 <?php 
 include ("header.php");
 include ("pass.php");
-$primaryLocation = "libs/primary".$currentWallet."address.php";
+$primaryLocation = "/home/stakebox/UI/primary".$currentWallet."address.php";
 
 function changePrimary(){
 

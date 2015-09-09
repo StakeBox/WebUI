@@ -3,10 +3,10 @@
 
 	#ini_set("display_errors", false);
 
-	require("libs/config.php");
+	require("/home/stakebox/UI/config.php");
 	require("jsonRPCClient.php");
-	include("printarray.php");
-	include("libs/currency.php");
+	require("printarray.php");
+	require("home/stakebox/UI/currency.php");
 	
 
 	session_start();
@@ -48,8 +48,8 @@
 	$fiatBTC = $data1->price;
 	
 	$lockState = "Not Encrypted";
-	include("libs/primary".$currentWallet."address.php");
-	include("libs/".$currentWallet."lockstate.php");
+	include("/home/stakebox/UI/primary".$currentWallet."address.php");
+	include("home/stakebox/UI/".$currentWallet."lockstate.php");
 ?>
 
 <html><head><title>StakeBox</title>

@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 include 'pass.php';
-$currencylocation = "currency.php" ;
+$currencylocation = "/home/stakebox/UI/currency.php" ;
 
 function changecurrency(){
 

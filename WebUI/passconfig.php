@@ -1,3 +1,3 @@
 <?php
-$passwordlocation = "password/password.php" ; 
+$passwordlocation = "/home/stakebox/UI/password/password.php" ; 
 ?>
