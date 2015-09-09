@@ -26,7 +26,7 @@ $status = $_POST["status"];
   
 if ($status == "webui"){
  
-    exec("cd /var/www/html/webui && git pull"); 
+    exec("cd /var/www/html/webui && git pull && chmod -R g+rwx /var/www/html/webui"); 
     print '<h2>You have updated the UI</h2>';
  
 }  
