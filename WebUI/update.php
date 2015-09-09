@@ -1,7 +1,7 @@
 <?php
 include ("header.php");
 include ("pass.php");
-$walletDir = "/home/stakebox/wallets/".$currentWallet
+$walletDir = "/home/stakebox/wallets/".$currentWallet;
 ?>
 
 <div style="padding: 5px 30px 0px;">
