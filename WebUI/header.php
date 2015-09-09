@@ -49,7 +49,7 @@
 	
 	$lockState = "Not Encrypted";
 	include("/home/stakebox/UI/primary".$currentWallet."address.php");
-	include("home/stakebox/UI/".$currentWallet."lockstate.php");
+	include("/home/stakebox/UI/".$currentWallet."lockstate.php");
 ?>
 
 <html><head><title>StakeBox</title>
