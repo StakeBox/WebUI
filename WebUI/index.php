@@ -13,7 +13,7 @@ if($primary!=""){
 else{
         $address = $coin->getaddressesbyaccount("")[0];
 	}
-if(lockState!=""){
+if($lockState!=""){
 	$walletLockState = $lockState;
 }
 else{
