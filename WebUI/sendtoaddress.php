@@ -6,9 +6,11 @@ $amount = $_POST['amount'];
 $comment = $_POST['comment'];
 $validate = $coin->validateaddress($address);
 $x = array_reverse($validate);
+$bal1 = $coin->getbalance();
 ?>
 
 <div class="panel panel-default">
+  <center><h3>Available Balance: <font color='green'><?php echo $bal1; ?></font> <?php echo $currentWallet; ?></h3></center>
     <table class="table-hover table-condensed table-bordered table">
         <form action="send.php" method="POST"><input type="hidden">
             <input type="hidden" name="a">

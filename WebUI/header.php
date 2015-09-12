@@ -46,13 +46,65 @@
 	curl_close($curl);
 	$data1 = json_decode($rawData1);
 	$fiatBTC = $data1->price;
+
+	$lastRunLog = '/home/stakebox/UI/lastrun';
+	$versionLocation = '/home/stakebox/UI/version.php';
+
+	if(!file_exists("$lastRunLog")){
+		$file = fopen("$lastRunLog","w");
+		fwrite($file,"");
+		fclose($file);
+	}  
+
+	if(!file_exists("$versionLocation")){
+		$file = fopen("$versionLocation","w");
+		fwrite($file,"");
+		fclose($file);
+	} 
+
+	if (file_exists($lastRunLog)) {
+	    $lastRun = file_get_contents($lastRunLog);
+	    if (time() - $lastRun >= 86400) {
+        	// fetch github info
+        	$curl = curl_init();
+		curl_setopt($curl, CURLOPT_HTTPHEADER,array('User-Agent: StakeBox'));
+        	curl_setopt($curl, CURLOPT_URL, "https://api.github.com/repos/stakebox/webuitest/tags");
+        	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        	$rawData2 = curl_exec($curl);
+        	curl_close($curl);
+	        $data2 = json_decode($rawData2);
+		$current = $data2[0]->name;
+	        //update lastrun.log with current time
+	        file_put_contents($lastRunLog, time());
+		//update version.php with current version
+		$fp = fopen($versionLocation, "w");
+	  	fwrite($fp, "<?php\n\$newestVersion='$current';\n?>");	  	
+	  	fclose($fp);
+		
+	    }
+	}
+
+
 	
 	$lockState = "Not Encrypted";
+	include("/home/stakebox/UI/version.php");
 	include("/home/stakebox/UI/primary".$currentWallet."address.php");
 	include("/home/stakebox/UI/".$currentWallet."lockstate.php");
+
+
+
+	
+	$currentVersion = '1.2.0';
+
+	if ($ref_tag != $current_tag){
+	    $uptodate = "update available";
+	}
+	  else{
+	    $uptodate = "up to date";
+	}
 ?>
 
-<html><head><title>StakeBox</title>
+<html><head><title><?php echo $price; echo " BTC/"; echo $ticker;?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='css/slate.css' rel='stylesheet' >
 <link href="css/main.css" rel="stylesheet" >
@@ -65,6 +117,17 @@
 				return false;
 			});
 		});
+		var pair = <?php echo json_encode($pair); ?>;
+		var ticker = <?php echo json_encode($ticker); ?>;
+		var data_from_ajax;
+		var refreshRate=setInterval(function(){fetchPrice()},180000);
+		function fetchPrice() {
+			$.get('price.php?pair='+pair, function(data) {
+				data_from_ajax = data;
+				document.title = data_from_ajax+" BTC/"+ticker;
+				document.getElementById("price").innerHTML = data_from_ajax;
+			});
+		}
 	</script>
 </head>
 <body>
@@ -88,7 +151,7 @@
 					<li><a href="control">Control</a></li>
 				</ul>
 				<div class="navbar-right">
-					<p class="navbar-text"><?php 	echo "Current price is {$price} BTC on {$data->ticker->markets[0]->market}"; ?></p>
+					<p class="navbar-text"><?php 	echo "Current price is <b id='price'>{$price}</b> BTC on {$data->ticker->markets[0]->market}"; ?></p>
 					<p class="navbar-text">Select Wallet:</p>
 					<ul class="nav navbar-nav">
 						<li class="dropdown">

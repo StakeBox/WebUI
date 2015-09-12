@@ -89,7 +89,8 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 </div>
 </div>
 <div class="well">
-
+<div class="row">
+	<div class="col-lg-7">
 	<p> Your main wallet address is <?php print_r($address); ?>.    
 	<p>The network is currently on block <?php print_r($coin->getblockcount()); ?>.
 	<?php if ($currentWallet == ArchCoin || $currentWallet == BitBean || $currentWallet == BlackCoin || $currentWallet == BottleCaps || $currentWallet == Clams || $currentWallet == DarkTron || $currentWallet == Equilibrium || $currentWallet == FlutterCoin || $currentWallet == GoldPieces || $currentWallet == HoboNickels || $currentWallet == Navajo || $currentWallet == NetCoin || $currentWallet == PayCon || $currentWallet == PayCoin || $currentWallet == RATECoin || $currentWallet == ShadowCash || $currentWallet == VeriCoin): ?>
@@ -111,5 +112,33 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 		<?php if ($hours == 1 && $days > 1)echo "$days days $hours hour $minutes minutes"?>
 		<?php if ($hours > 1 && $days > 1)echo "$days days $hours hours $minutes minutes"?>
 	<?php endif; ?>
-		</p></p></div>
+		</p></p>
+	<?php if($currentVersion != $newestVersion):?>
+		<a href='update' class='btn btn-default' role='button'>A new update is available, click to get it.</a>
+	<?php endif; ?>
+	</div>
+     <?php if(file_exists("/home/stakebox/UI/".$currentWallet."notes.php")){ 
+       include('/home/stakebox/UI/'.$currentWallet.'notes.php'); 
+	echo "<div class='col-lg-5'>
+	  <div class='form-group'>
+	  <form action='notes' method='POST'><input type='hidden'>
+	    <label for='notes'>Notes:</label>
+	      <textarea class='form-control' name='notes' id='notes' cols='60' rows='10'>$notes</textarea>
+		<button class='btn btn-default' type='submit' value='setprimary'>Save Notes</button>
+	  </form>
+	  </div>
+	</div>";}
+     else{
+	echo "<div class='col-lg-5'>
+	  <div class='form-group'>
+	  <form action='notes' method='POST'><input type='hidden'>
+	    <label for='notes'>Notes:</label>
+	      <textarea class='form-control' name='notes' id='notes' cols='60' rows='10'></textarea>
+		<button class='btn btn-default' type='submit' value='setprimary'>Save Notes</button>
+	  </form>
+	  </div>
+	</div>";}
+?>
+</div>
+</div>
 <?php include ("footer.php"); ?>

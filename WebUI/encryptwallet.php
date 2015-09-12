@@ -2,7 +2,7 @@
 include ("header.php");
 include ("pass.php");
 $password = $_POST['password'];
-$lockStateLocation = "/home/stakebox/UI/".$currentWallet."lockstate.php";
+$lockStateLocation = "/home/stakebox/UI".$currentWallet."lockstate.php";
 
 function changeLockState(){
 
