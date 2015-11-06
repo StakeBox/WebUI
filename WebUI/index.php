@@ -12,13 +12,8 @@ if($primary!=""){
 }
 else{
         $address = $coin->getaddressesbyaccount("")[0];
-	}
-if($lockState!=""){
-	$walletLockState = $lockState;
 }
-else{
-	$walletLockState = "Unlocked";
-}
+
 if ($currentWallet == ArchCoin || $currentWallet == BlackCoin || $currentWallet == Clams || $currentWallet == Crave || $currentWallet == FlutterCoin || $currentWallet == GoldPieces || $currentWallet == LiteDoge || $currentWallet == Navajo || $currentWallet == NetCoin || $currentWallet == PayCon || $currentWallet == RATECoin || $currentWallet == ShadowCash){
 	$stakinginfo = $coin->getstakinginfo(); 
 	$x = array_reverse($stakinginfo); 
@@ -57,7 +52,7 @@ if ($currentWallet == BottleCaps || $currentWallet == HoboNickels || $currentWal
 		<h4><?php echo $longCurrency; ?> Value: <font color='green'><?php echo "{$symbol}{$fiatValue}"; ?></font></h4><br>
 		<div class="col-lg-8">
                 	<form action="lockcontrol">
-                   		<button class='btn btn-default btn-block'>Your Wallet Is <?php print($walletLockState)?> Click To Change</button>
+                   		<button class='btn btn-default btn-block'>Your Wallet Is <?php print($lockState)?> Click To Change</button>
                 	</form>	
 		</div>
 	</div>

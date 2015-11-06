@@ -84,17 +84,48 @@
 	    }
 	}
 
+$lockStateLocation = "/home/stakebox/UI/".$currentWallet."lockstate.php";
 
-	
-	$lockState = "Not Encrypted";
+function changeLockState(){
+
+	global $lockStateLocation;
+	global $newLockState;
+	if(!file_exists("$lockStateLocation")){
+		$file = fopen("$lockStateLocation","w");
+		fwrite($file,"");
+		fclose($file);
+	}   
+	if (is_readable($lockStateLocation) == FALSE) 
+		die ("The lock state file must be writable.") ; 
+
+	// Open the file and erase the contents if any
+	$fp = fopen($lockStateLocation, "w");
+
+	// Write the data to the file
+	// CODE INJECTION WARNING!
+  	fwrite($fp, "<?php\n\$lockState='$newLockState';\n?>");	  	
+  	// Close the file
+  	fclose($fp);
+}
+
 	include("/home/stakebox/UI/version.php");
 	include("/home/stakebox/UI/primary".$currentWallet."address.php");
-	include("/home/stakebox/UI/".$currentWallet."lockstate.php");
+	if (!file_exists("/home/stakebox/UI/".$currentWallet."lockstate.php")) {
+		try {
+			$coin->walletlock();
+			$newLockState = "Locked";
+			changeLockState();
+		} catch(Exception $e) {	
+			$lockState = "Not Encrypted";
+			$newLockState = "Not Encrypted";
+			changeLockState();
+		}
+	}
+	else {
+		include("/home/stakebox/UI/".$currentWallet."lockstate.php");
+	}
 
-
-
-	
-	$currentVersion = 'v1.2.1';
+	$currentVersion = 'v1.2.2';
 
 	if ($ref_tag != $current_tag){
 	    $uptodate = "update available";
@@ -140,6 +171,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="./"><img src="logo.png" height="170%"></a>
 
@@ -149,6 +181,7 @@
 					<li><a href="last20transactions">Transactions</a></li>
 					<li><a href="sendcoins">Send Coins</a></li>
 					<li><a href="control">Control</a></li>
+					<li><a href="help">Help</a></li>
 				</ul>
 				<div class="navbar-right">
 					<p class="navbar-text"><?php 	echo "Current price is <b id='price'>{$price}</b> BTC on {$data->ticker->markets[0]->market}"; ?></p>

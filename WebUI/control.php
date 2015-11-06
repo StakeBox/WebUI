@@ -230,10 +230,15 @@ include ("pass.php");
          <div class="row">
             <div class="col-lg-2">
                <form action="walletlock" method="POST"><input type="hidden">
-                  <button class='btn btn-default btn-block ' type="submit" value="walletlock">Lock Your Wallet</button>
+                  <button class='btn btn-default btn-block' type="submit" value="walletlock">Lock Your Wallet</button>
                </form>
-            </div><!-- /.col-xs-2 -->
-            <div class="col-lg-5">
+            </div><!-- /.col-lg-2 -->
+            <div class="col-lg-2"> 
+               <form action="downloadwallet" method="POST"><input type="hidden">
+	          <button class='btn btn-default btn-block' type="submit" value="backupwallet">Backup Wallet</button>	       
+               </form>
+            </div><!-- /.col-lg-2 -->
+            <div class="col-lg-8">
                <form action="encryptwallet" method="POST"><input type="hidden">
                   <div class="input-group">
                      <span class="input-group-btn">
@@ -242,17 +247,7 @@ include ("pass.php");
                         <input class="form-control" type="password" name="password" placeholder="Enter password you would like to use">
                   </div><!-- /input-group -->
                </form>
-            </div><!-- /.col-lg-5 -->
-            <div class="col-lg-5"> 
-               <form action="backupwallet" method="POST"><input type="hidden">
-                  <div class="input-group">
-                     <span class="input-group-btn">
-	                <button class='btn btn-default' type="submit" value="backupwallet">Back Up Wallet</button>	       
-	             </span>
-                        <input class="form-control" type="text" name="destination" placeholder="Destination">
-                  </div><!-- /input-group -->
-               </form>
-            </div><!-- /.col-lg-5 -->
+            </div><!-- /.col-lg-8 -->
          </div><!-- /.row -->
          <div class="row">
             <div class="col-lg-6">
@@ -296,7 +291,8 @@ include ("pass.php");
                <form action="dumpprivkey" method="POST"><input type="hidden">
                   <div class="input-group">
                      <span class="input-group-btn">
-	                <button class='btn btn-default' type="submit" value="dumpprivkey">Dump Private Key</button>	       </span>
+	                <button class='btn btn-default' type="submit" value="dumpprivkey">Dump Private Key</button>	      
+                     </span>
                         <input class="form-control" type="text" name="address" placeholder="Address">
 		     </span>
                   </div><!-- /input-group -->
@@ -311,7 +307,7 @@ include ("pass.php");
                         <input class="form-control" type="text" name="key" placeholder="Private Key">
                   </div><!-- /input-group -->
             </div><!-- /.col-lg-5 -->
-        <div class="col-xs-2">
+            <div class="col-xs-2">
                         <input class="form-control" type="text" name="label" placeholder="Label">
                </form>
             </div><!-- /.col-lg-2 -->

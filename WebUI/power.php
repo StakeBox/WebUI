@@ -1,29 +1,6 @@
 <?php
 include ("header.php");
 include ("pass.php");
-$lockStateLocation = "/home/stakebox/UI/".$currentWallet."lockstate.php";
-
-function changeLockState(){
-
-	global $lockStateLocation;
-	global $newLockState;
-	if(!file_exists("$lockStateLocation")){
-		$file = fopen("$lockStateLocation","w");
-		fwrite($file,"");
-		fclose($file);
-	}   
-	if (is_readable($lockStateLocation) == FALSE) 
-		die ("The lock state file must be writable.") ; 
-
-	// Open the file and erase the contents if any
-	$fp = fopen($lockStateLocation, "w");
-
-	// Write the data to the file
-	// CODE INJECTION WARNING!
-  	fwrite($fp, "<?php\n\$lockState='$newLockState';\n?>");	  	
-  	// Close the file
-  	fclose($fp);
-}
 ?>
 
 <div style="padding: 5px 30px 0px;">
@@ -46,15 +23,495 @@ function changeLockState(){
 <?php  
 $status = $_POST["status"];  
   
-if ($status == "reboot"){  
-    $newLockState = "Locked";
-    changeLockState();
+if ($status == "reboot"){ 
+  if ($lockState != "Not Encrypted") { 
+
+$currentWallet = ArchCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = BitBean;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = BlackCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = BottleCaps;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = CASH;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Clams;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Crave;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = DarkTron;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Diamond;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Equilibrium;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = FlutterCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = GoldPieces;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = HoboNickels;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = HYPER;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = HyperStake;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = LiteDoge;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = MintCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Navajo;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = NetCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = NovaCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Pandacoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Paycoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Paycon;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = PeerCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = PhilosopherStone;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Paycon;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = RATECoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = ShadowCash;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Sprouts;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = TekCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+  }
     exec("python /var/www/html/webui/WebUI/libs/reboot.py");  
     print '<h2>Your StakeBox is rebooting ...</h2>';  
 }  
 if ($status == "shutdown"){ 
-    $newLockState = "Locked"; 
-    changeLockState();
+  if ($lockState != "Not Encrypted") { 
+
+$currentWallet = ArchCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = BitBean;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = BlackCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = BottleCaps;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = CASH;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Clams;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Crave;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = DarkTron;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Diamond;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Equilibrium;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = FlutterCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = GoldPieces;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = HoboNickels;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = HYPER;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = HyperStake;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = LiteDoge;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = MintCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Navajo;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = NetCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = NovaCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Pandacoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Paycoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Paycon;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = PeerCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = PhilosopherStone;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Paycon;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = RATECoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = ShadowCash;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = Sprouts;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+
+$currentWallet = TekCoin;
+$_SESSION['currentWallet'] = $currentWallet;
+$coinu = $wallets[$currentWallet];
+$coin = new jsonRPCClient("{$coinu['protocol']}://{$coinu['user']}:{$coinu['pass']}@{$coinu['host']}:{$coinu['port']}", true);
+$coin->walletlock();
+$newLockState = "Locked";
+changeLockState();
+  }
     exec("python /var/www/html/webui/WebUI/libs/shutdown.py");  
     print '<h2>Your StakeBox is shutting down ...</h2>';  
 } 

@@ -1,6 +1,5 @@
 <?php
 include ("header.php");
-include ("printarray.php");
 include ("pass.php");
 ?>
 
