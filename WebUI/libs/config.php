@@ -2,6 +2,15 @@
 
 	$wallets = array();
 
+	$wallets['AmberCoin'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 31981,
+		"protocol" => "http",
+		"ticker" => "AMBER"
+	);
+
 	$wallets['ArchCoin'] = array(
 		"user" => "user",  
 		"pass" => "stakebox",      
@@ -262,6 +271,15 @@
 		"port" => 18514,
 		"protocol" => "http",
 		"ticker" => "TEK"
+	);
+
+	$wallets['TruckCoin'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 18776,
+		"protocol" => "http",
+		"ticker" => "TRK"
 	);
 
 ?>
