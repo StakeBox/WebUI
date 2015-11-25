@@ -74,6 +74,33 @@
 		"ticker" => "CRAVE"
 	);
 
+	$wallets['CAPTCoin'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 26651,
+		"protocol" => "http",
+		"ticker" => "CAPT"
+	);
+
+	$wallets['EmerCoin'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 8332,
+		"protocol" => "http",
+		"ticker" => "EMC"
+	);
+
+	$wallets['DigiCube'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 13777,
+		"protocol" => "http",
+		"ticker" => "CUBE"
+	);
+
 	$wallets['DarkTron'] = array(
 		"user" => "user",  
 		"pass" => "stakebox",      
@@ -191,7 +218,16 @@
 		"ticker" => "NVC"
 	);
 
-	$wallets['Pandacoin'] = array(
+	$wallets['OKCash'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 6969,
+		"protocol" => "http",
+		"ticker" => "OK"
+	);
+
+	$wallets['PandaCoin'] = array(
 		"user" => "user",  
 		"pass" => "stakebox",      
 		"host" => "localhost",     
@@ -209,7 +245,7 @@
 		"ticker" => "XPY"
 	);
 
-	$wallets['Paycon'] = array(
+	$wallets['PayCon'] = array(
 		"user" => "user",  
 		"pass" => "stakebox",      
 		"host" => "localhost",     
