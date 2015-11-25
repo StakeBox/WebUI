@@ -9,7 +9,7 @@ include ("pass.php");
             <a href="getinfo" class='btn btn-default' role='button'>Get Server Info</a>
 <?php if($currentWallet == PayCoin || $currentWallet == Sprouts):?>
             <a href="listminting" class='btn btn-default' role='button'>Get Staking Info</a>
-<?php elseif($currentWallet == BottleCaps || $currentWallet == CASH || $currentWallet == Diamond || $currentWallet == HoboNickels || $currentWallet == HYPER || $currentWallet == HyperStake || $currentWallet == NovaCoin || $currentWallet == PhilosopherStone || $currentWallet == TekCoin):?>
+<?php elseif($currentWallet == BottleCaps || $currentWallet == CASH || $currentWallet == EmerCoin || $currentWallet == Diamond || $currentWallet == DigiCube || $currentWallet == HoboNickels || $currentWallet == HYPER || $currentWallet == HyperStake || $currentWallet == NovaCoin || $currentWallet == PhilosopherStone || $currentWallet == TekCoin):?>
             <a href="getmininginfo" class='btn btn-default' role='button'>Get Staking Info</a>
 <?php elseif($currentWallet == TruckCoin):?>
             <a href="getstakereport" class='btn btn-default' role='button'>Get Staking Info</a>
