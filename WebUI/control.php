@@ -26,6 +26,20 @@ include ("pass.php");
             <a href="changecurrency" class='btn btn-default' role='button'>Change Currency</a>
          </div><!-- /.row -->
       </div><!-- /.padding -->
+      <div style="padding: 5px 15px 5px;">
+         <div class="row">
+            <div class="col-lg-8">
+               <form action="setemail" method="POST"><input type="hidden">
+                  <div class="input-group">
+                     <span class="input-group-btn">
+	                <button class='btn btn-default' type="submit" value="setemail">Set Notification Email</button>
+                     </span>
+                        <input class="form-control" type="text" name="address" placeholder="Enter Email Address" >
+                  </div><!-- /input-group -->
+               </form>
+            </div><!-- /.col-lg-8 -->
+         </div><!-- /.row -->	    
+      </div><!-- /.padding -->
 </div><!-- /.well -->
 
 <div class="well">

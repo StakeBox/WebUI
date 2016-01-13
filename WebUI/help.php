@@ -64,6 +64,14 @@
             <p>
                Change Currency: This button will take you to a page where you can choose from 
                a long list of currencies to display the value of your wallet in on the main page.
+            </p>
+            <p>
+	       Set Notification Email: Add an email address here that you would like to use to receive
+	       notifications about transactions to and from your wallet. You will be notified each time 
+	       coins are sent or received by you wallet, and each time you earn a reward for staking.
+	       Notifications will also be sent in the event the available disk space on your StakeBox
+	       falls to less than 3% of the total disk space. If you would like to stop receiving notifications, 
+	       simply use this to enter gibberish in the email field.
             </p></h4>
          </div><!-- /.row -->
       </div><!-- /.padding -->			

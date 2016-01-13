@@ -7,6 +7,8 @@
 	require("jsonRPCClient.php");
 	require("printarray.php");
 	require("/home/stakebox/UI/currency.php");
+	include("/home/stakebox/UI/email.php");
+	include("diskusage.php");
 	
 
 	session_start();
@@ -210,5 +212,7 @@ function changeLockState(){
 	} catch(exception $e) {
 		echo "<br><p class='bg-danger'><b>Error: Your wallet server is not running. Please restart your StakeBox via the power option in the server section on the control page. If you have just restarted it, or powered it on, please allow it up to several minutes before attempting to restart it again.</b></p>";
 	}
-
+	if($dp>97){
+		echo "<br><p class='bg-danger'><b>NOTICE: Your disk is nearing capacity, it is currently ".$dp."% full, with ".$df." free space remaining!</b></p>";
+	}
 ?>
