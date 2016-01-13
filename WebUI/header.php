@@ -127,7 +127,7 @@ function changeLockState(){
 		include("/home/stakebox/UI/".$currentWallet."lockstate.php");
 	}
 
-	$currentVersion = 'v1.2.2';
+	$currentVersion = 'v1.2.3';
 
 	if ($ref_tag != $current_tag){
 	    $uptodate = "update available";
