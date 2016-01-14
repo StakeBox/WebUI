@@ -30,7 +30,7 @@
 	$date = date('D M j Y g:i a', $trxinfo['time']);
 	
 	if($trxinfo["details"][0]["category"]=="send"){
-		$new = "You have sent ".$trxinfo["details"][1]["amount"]." ".$ticker." to ".$trxinfo["details"][1]["address"]."."
+		$new = "You have sent ".abs($trxinfo["details"][0]["amount"])." ".$ticker." to ".$trxinfo["details"][0]["address"]."."
 		."\nAs of ".$date." your current balance is ".$walletinfo["balance"];
 	}
 	
