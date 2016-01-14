@@ -8,9 +8,6 @@ function setEmail(){
 	global $emailLocation ;
 	global $newEmail ;
 
-	if (is_readable($emailLocation) == FALSE) 
-		die ("The email file must be writable.") ; 
-
 	// Open the file and erase the contents if any
 	$fp = fopen($emailLocation, "w");
 
