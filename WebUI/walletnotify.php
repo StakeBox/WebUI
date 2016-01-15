@@ -39,7 +39,12 @@
 		."\nAs of ".$date." your current balance is ".$walletinfo["balance"];
 	}
 
-	if(($trxinfo["details"][0]["category"]=="stake")||($trxinfo["details"][0]["category"]=="generate")){
+	if($trxinfo["details"][0]["category"]=="stake"){
+		$new = "You have received a staking reward of ".$trxinfo["details"][0]["amount"]." ".$ticker."."
+		."\nAs of ".$date." your current balance is ".$walletinfo["balance"];
+	}
+
+	if($trxinfo["details"][0]["category"]=="generate"){
 		$new = "You have received a staking reward of ".$trxinfo["details"][0]["amount"]." ".$ticker."."
 		."\nAs of ".$date." your current balance is ".$walletinfo["balance"];
 	}
