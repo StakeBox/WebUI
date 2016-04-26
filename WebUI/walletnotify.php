@@ -57,7 +57,7 @@
 		exec("echo '$diskWarning' | mailx -s 'StakeBox disk space low!' $email");
 	}
 
-	if($transactionHash==$oldHash){
+	if(($transactionHash==$oldHash)&&($new!="")){
 		exec("echo '$new' | mailx -s 'New $currentWallet transaction' $email");
 	}
 

@@ -173,6 +173,15 @@
 		"ticker" => "HYP"
 	);
 
+	$wallets['Influx'] = array(
+		"user" => "user",  
+		"pass" => "stakebox",      
+		"host" => "localhost",     
+		"port" => 9239,
+		"protocol" => "http",
+		"ticker" => "INFX"
+	);
+
 	$wallets['LiteDoge'] = array(
 		"user" => "user",  
 		"pass" => "stakebox",      

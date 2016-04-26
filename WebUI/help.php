@@ -70,8 +70,10 @@
 	       notifications about transactions to and from your wallet. You will be notified each time 
 	       coins are sent or received by you wallet, and each time you earn a reward for staking.
 	       Notifications will also be sent in the event the available disk space on your StakeBox
-	       falls to less than 3% of the total disk space. If you would like to stop receiving notifications, 
-	       simply use this to enter gibberish in the email field.
+	       falls to less than 3% of the total disk space. In all likelihood your email provider will 
+	       send these emails to your spam folder, you will have to set things up through there to have them 
+	       delivered to your inbox.If you would like to stop receiving notifications, 
+	       simply use this to enter gibberish in the email field. 
             </p></h4>
          </div><!-- /.row -->
       </div><!-- /.padding -->			
